@@ -7,7 +7,6 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.VirtualFileVisitor
 import com.intellij.psi.PsiFileFactory
 import com.intellij.psi.impl.DebugUtil
-import com.intellij.testFramework.UsefulTestCase
 import org.junit.experimental.categories.Category
 import org.rust.Performance
 import org.rust.lang.RustFileType
@@ -76,10 +75,10 @@ class RustParserPerformanceTest : RustTestCaseBase() {
         }
         check(processed.size > expectedNumberOfFiles)
 
-        if (UsefulTestCase.IS_UNDER_TEAMCITY) {
+//        if (UsefulTestCase.IS_UNDER_TEAMCITY) {
             //https://confluence.jetbrains.com/display/TCD10/Build+Script+Interaction+with+TeamCity#BuildScriptInteractionwithTeamCity-ReportingBuildStatistics
             println("##teamcity[buildStatisticValue key='name' value='$totalTime']")
-        }
+//        }
 
         println("\n$name " +
             "\nTotal: ${totalTime}ms" +
